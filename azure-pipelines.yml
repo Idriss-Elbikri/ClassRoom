@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - main  # ou "master" selon ta branche par défaut
+      - main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -18,7 +18,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    testRunTitle: 'Résultats des tests unitaires'
+    testRunTitle: 'Résultats des tests Java J2EE'
 
 - task: CopyFiles@2
   inputs:

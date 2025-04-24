@@ -18,6 +18,8 @@
     </properties>
 
     <dependencies>
+            
+    
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -36,6 +38,30 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependencies>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.0.0-M5</version>
+    </plugin>
+  </plugins>
+</build>
+
+
+
+
+
     </dependencies>
 
     <build>
