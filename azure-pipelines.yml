@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - main  # ou "master" selon ta branche par défaut
+      - main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -13,16 +13,16 @@ steps:
     goals: 'clean install'
     options: '-Xmx3072m'
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testResultsFiles: '/surefire-reports/TEST-*.xml'
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    testRunTitle: 'Résultats des tests unitaires'
+    testResultsFiles: '/surefire-reports/TEST-*.xml'
+    testRunTitle: 'Résultats des tests Java J2EE'
 
 - task: CopyFiles@2
   inputs:
-    contents: '**/target/*.jar'
+    contents: '/target/*.jar'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
